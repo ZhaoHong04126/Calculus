@@ -163,6 +163,42 @@ export default function AdvancedFormulas() {
           </table>
         </div>
       </div>
+
+      <div className="math-box p-6 bg-rose-50 rounded-lg shadow-sm border border-rose-200 mb-8">
+        <h3 className="text-xl font-bold mb-3 text-rose-800">二、</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse bg-white rounded shadow-sm border border-rose-200">
+            <thead className="bg-rose-100 text-rose-900">
+              <tr>
+                <th className="py-2 px-4 border border-rose-200 font-bold w-1/3">積分類型</th>
+              </tr>
+            </thead>
+            <tbody className="text-gray-800">
+              <tr className="hover:bg-rose-50/50 transition-colors">
+                <td className="py-3 px-4 border border-rose-200 font-semibold align-top">
+                  <InlineMath math="\int [\sin(mx) \cos(nx)] \,dx = \frac{1}{2} [- \frac{1}{m+n} \cos((m+n)x) - \frac{1}{m-n} \cos((m-n)x)] + C" />
+                </td>
+              </tr>
+              <tr className="hover:bg-rose-50/50 transition-colors">
+                <td className="py-3 px-4 border border-rose-200 font-semibold align-top">
+                  <InlineMath math="\int [\cos(mx) \sin(nx)] \,dx = \frac{1}{2} [- \frac{1}{m+n} \cos((m+n)x) + \frac{1}{m-n} \cos((m-n)x)] + C" />
+                </td>
+              </tr>
+              <tr className="hover:bg-rose-50/50 transition-colors">
+                <td className="py-3 px-4 border border-rose-200 font-semibold align-top">
+                  <InlineMath math="\int \cos (mx) \cos (nx) \,dx = \frac{1}{2} [\frac{1}{m+n} \sin((m+n)x) + \frac{1}{m-n} \sin((m-n)x)] + C" />
+                </td>
+              </tr>
+              <tr className="hover:bg-rose-50/50 transition-colors">
+                <td className="py-3 px-4 border border-rose-200 font-semibold align-top">
+                  <InlineMath math="\int \sin (mx) \sin (nx) \,dx = \frac{1}{2} [\frac{1}{m+n} \sin((m+n)x) + \frac{1}{m-n} \sin((m-n)x)] + C" />
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
   );
 }
