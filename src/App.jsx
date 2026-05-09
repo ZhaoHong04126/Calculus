@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Routes, Route, NavLink } from 'react-router-dom';
 import './App.css';
-
 // 引入各個主題的進入點元件
 import Introduction from './Introduction/Introduction';
 import About from './About/About';
@@ -18,14 +17,6 @@ import ScrollToHashElement from './components/ScrollToHash';
 
 
 
-function SidebarIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="3" width="18" height="18" rx="2" />
-      <line x1="9" y1="3" x2="9" y2="21" />
-    </svg>
-  );
-}
 
 // 網站識別標誌 (Sigma 圖案)
 function LogoIcon() {
@@ -44,56 +35,14 @@ function LogoIcon() {
 }
 
 export default function App() {
-  // 控制側邊欄開關的狀態，預設為開啟 (桌面版)，手機版預設為隱藏
-  const [isSidebarOpen, setIsSidebarOpen] = useState(() => window.innerWidth > 768);
-
-  // 監聽視窗大小變化，解決從手機版切換回桌面版時側邊欄消失的問題
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setIsSidebarOpen(true);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // 切換側邊欄的函數
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
   return (
     <div className="app-container">
       <ScrollToHashElement />
 
-
-
-      {/* 手機版遮罩：點擊可關閉側邊欄 */}
-      {isSidebarOpen && (
-        <div className="sidebar-overlay" onClick={toggleSidebar} aria-hidden="true" />
-      )}
-
-      {/* 手機版浮動開啟按鈕（側邊欄關閉時顯示） */}
-      <button
-        className={`mobile-open-btn${isSidebarOpen ? ' hidden' : ''}`}
-        onClick={toggleSidebar}
-        title="展開選單"
-        aria-label="展開選單"
-      >
-        <SidebarIcon />
-      </button>
-
-      {/* 左側導覽列：透過動態 class 控制展開或隱藏 */}
-      <nav className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
+      <nav className="sidebar open">
         <div className="sidebar-header">
           <LogoIcon />
           <h2 className="sidebar-title">微積分參考手冊</h2>
-          {/* 手機版關閉按鈕 - 側邊欄右上角 */}
-          <button className="sidebar-toggle-btn" onClick={toggleSidebar} title="隱藏選單" aria-label="隱藏選單">
-            <SidebarIcon />
-          </button>
         </div>
         <ul className="nav-links">
           <li>
