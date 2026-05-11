@@ -1,6 +1,7 @@
 // src/Techniques/Techniques.jsx
 import USubstitution from '../Integrals/USubstitution';
 import IntegrationByParts from '../Integrals/IntegrationByParts';
+import TrigIntegrals from '../Integrals/TrigIntegrals';
 import SectionNav from '../components/SectionNav';
 import '../Integrals/Integrals.css';
 
@@ -8,7 +9,7 @@ export default function Techniques() {
   const sections = [
     { id: 'substitution', title: '變數變換法 (u-Substitution)' },
     { id: 'parts', title: '分部積分法 (Integration by Parts)' },
-    { id: 'trig-integrals', title: '三角函數的積分 (Coming Soon)' },
+    { id: 'trig-integrals', title: '三角函數的積分 (Trigonometric Integrals)' },
     { id: 'trig-sub', title: '三角變換法 (Coming Soon)' },
   ];
 
@@ -31,13 +32,8 @@ export default function Techniques() {
         <IntegrationByParts />
       </div>
 
-      <div id="trig-integrals" className="mt-8 pt-4 ml-6 border-t border-gray-50">
-        <h3 className="section-subtitle text-xl font-bold mb-4 opacity-50">
-          3. 三角函數的積分 (Coming Soon)
-        </h3>
-        <p className="text-sm text-gray-400 italic ml-1">
-          ※ 這小節是為下一小節做準備。( 後續會更新內容，請耐心等候。原因是作者的學校期中考剛好考到分部積分!! )
-        </p>
+      <div id="trig-integrals">
+        <TrigIntegrals />
       </div>
 
       <div id="trig-sub" className="mt-8 pt-4 ml-6 border-t border-gray-50">

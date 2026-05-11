@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, NavLink } from 'react-router-dom';
 import './App.css';
-
 // 引入各個主題的進入點元件
 import Introduction from './Introduction/Introduction';
 import About from './About/About';
@@ -16,13 +15,10 @@ import IntegralsApps from './IntegralsApps/IntegralsApps';
 import Reference from './Reference/Reference';
 import ScrollToHashElement from './components/ScrollToHash';
 
-
-
 function SidebarIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="3" width="18" height="18" rx="2" />
-      <line x1="9" y1="3" x2="9" y2="21" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
     </svg>
   );
 }
@@ -44,110 +40,110 @@ function LogoIcon() {
 }
 
 export default function App() {
-  // 控制側邊欄開關的狀態，預設為開啟 (桌面版)，手機版預設為隱藏
-  const [isSidebarOpen, setIsSidebarOpen] = useState(() => window.innerWidth > 768);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 768);
 
-  // 監聽視窗大小變化，解決從手機版切換回桌面版時側邊欄消失的問題
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth >= 768) {
         setIsSidebarOpen(true);
+      } else {
+        setIsSidebarOpen(false);
       }
     };
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // 切換側邊欄的函數
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebarOnMobile = () => {
+    if (window.innerWidth < 768) {
+      setIsSidebarOpen(false);
+    }
   };
 
   return (
     <div className="app-container">
       <ScrollToHashElement />
 
-
-
-      {/* 手機版遮罩：點擊可關閉側邊欄 */}
-      {isSidebarOpen && (
-        <div className="sidebar-overlay" onClick={toggleSidebar} aria-hidden="true" />
+      {/* 手機版：若側邊欄開啟，顯示半透明黑色遮罩 */}
+      {isSidebarOpen && window.innerWidth < 768 && (
+        <div className="sidebar-overlay" onClick={toggleSidebar}></div>
       )}
 
-      {/* 手機版浮動開啟按鈕（側邊欄關閉時顯示） */}
-      <button
-        className={`mobile-open-btn${isSidebarOpen ? ' hidden' : ''}`}
-        onClick={toggleSidebar}
-        title="展開選單"
-        aria-label="展開選單"
-      >
-        <SidebarIcon />
-      </button>
+      {/* 手機版：浮動開啟按鈕 (漢堡選單) */}
+      {!isSidebarOpen && (
+        <button className="mobile-open-btn" onClick={toggleSidebar} title="展開選單" aria-label="展開選單">
+          <SidebarIcon />
+        </button>
+      )}
 
-      {/* 左側導覽列：透過動態 class 控制展開或隱藏 */}
       <nav className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-header">
           <LogoIcon />
           <h2 className="sidebar-title">微積分參考手冊</h2>
-          {/* 手機版關閉按鈕 - 側邊欄右上角 */}
-          <button className="sidebar-toggle-btn" onClick={toggleSidebar} title="隱藏選單" aria-label="隱藏選單">
-            <SidebarIcon />
-          </button>
+          {/* 在小螢幕上可以顯示一個關閉按鈕 */}
+          {window.innerWidth < 768 && (
+            <button className="sidebar-toggle-btn" onClick={toggleSidebar} title="隱藏選單" aria-label="隱藏選單">
+              ✖
+            </button>
+          )}
         </div>
         <ul className="nav-links">
           <li>
-            <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""} end>
+            <NavLink to="/" onClick={closeSidebarOnMobile} className={({ isActive }) => isActive ? "active-link" : ""} end>
               歡迎使用
             </NavLink>
           </li>
           <li>
-            <NavLink to="/introduction" className={({ isActive }) => isActive ? "active-link" : ""}>
+            <NavLink to="/introduction" onClick={closeSidebarOnMobile} className={({ isActive }) => isActive ? "active-link" : ""}>
               第零章：微積分簡介
             </NavLink>
           </li>
           <li>
-            <NavLink to="/functions" className={({ isActive }) => isActive ? "active-link" : ""}>
+            <NavLink to="/functions" onClick={closeSidebarOnMobile} className={({ isActive }) => isActive ? "active-link" : ""}>
               第一章：函數介紹
             </NavLink>
           </li>
           <li>
-            <NavLink to="/limits" className={({ isActive }) => isActive ? "active-link" : ""}>
+            <NavLink to="/limits" onClick={closeSidebarOnMobile} className={({ isActive }) => isActive ? "active-link" : ""}>
               第二章：極限
             </NavLink>
           </li>
           <li>
-            <NavLink to="/continuity" className={({ isActive }) => isActive ? "active-link" : ""}>
+            <NavLink to="/continuity" onClick={closeSidebarOnMobile} className={({ isActive }) => isActive ? "active-link" : ""}>
               第三章：連續
             </NavLink>
           </li>
           <li>
-            <NavLink to="/derivatives" className={({ isActive }) => isActive ? "active-link" : ""}>
+            <NavLink to="/derivatives" onClick={closeSidebarOnMobile} className={({ isActive }) => isActive ? "active-link" : ""}>
               第四章：導數與微分
             </NavLink>
           </li>
           <li>
-            <NavLink to="/derivatives-apps" className={({ isActive }) => isActive ? "active-link" : ""}>
+            <NavLink to="/derivatives-apps" onClick={closeSidebarOnMobile} className={({ isActive }) => isActive ? "active-link" : ""}>
               第五章：微分的應用
             </NavLink>
           </li>
           <li>
-            <NavLink to="/integrals" className={({ isActive }) => isActive ? "active-link" : ""}>
+            <NavLink to="/integrals" onClick={closeSidebarOnMobile} className={({ isActive }) => isActive ? "active-link" : ""}>
               第六章：反導數與積分
             </NavLink>
           </li>
           <li>
-            <NavLink to="/techniques" className={({ isActive }) => isActive ? "active-link" : ""}>
+            <NavLink to="/techniques" onClick={closeSidebarOnMobile} className={({ isActive }) => isActive ? "active-link" : ""}>
               第七章：積分技巧
             </NavLink>
           </li>
           <li>
-            <NavLink to="/integrals-apps" className={({ isActive }) => isActive ? "active-link" : ""}>
+            <NavLink to="/integrals-apps" onClick={closeSidebarOnMobile} className={({ isActive }) => isActive ? "active-link" : ""}>
               第八章：積分的應用
             </NavLink>
           </li>
           <li>
-            <NavLink to="/reference" className={({ isActive }) => isActive ? "active-link" : ""}>
+            <NavLink to="/reference" onClick={closeSidebarOnMobile} className={({ isActive }) => isActive ? "active-link" : ""}>
               第九章：公式表 / 題庫
             </NavLink>
           </li>
@@ -169,7 +165,6 @@ export default function App() {
             <Route path="/techniques" element={<Techniques />} />
             <Route path="/integrals-apps" element={<IntegralsApps />} />
             <Route path="/reference" element={<Reference />} />
-
           </Routes>
         </div>
       </main>
