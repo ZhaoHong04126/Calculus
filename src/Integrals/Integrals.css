@@ -86,3 +86,13 @@
 .opacity-50:hover {
   opacity: 0.8;
 }
+
+/* 將所有獨立數學式 (BlockMath) 靠左對齊 */
+.katex-display,
+.katex-display > .katex {
+  text-align: left !important;
+}
+
+.katex-display {
+  padding-left: 1.5rem !important;
+}

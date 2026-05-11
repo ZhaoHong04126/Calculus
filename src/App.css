@@ -16,6 +16,17 @@
   flex-shrink: 0;
   overflow-y: auto;
   z-index: 200;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 展開狀態：正常顯示 */
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* 隱藏狀態：將整個側邊欄往左推移 */
+.sidebar.closed {
+  transform: translateX(-100%);
 }
 
 
@@ -117,6 +128,81 @@
   }
 }
 
+/* ================== 手機版與側邊欄遮罩 ================== */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+  backdrop-filter: blur(2px);
+  transition: opacity 0.3s ease;
+}
+
+.mobile-open-btn {
+  display: none;
+  position: fixed;
+  top: 0.35rem;
+  left: 0.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.mobile-open-btn:hover {
+  background-color: #f1f5f9;
+}
+
+.mobile-open-btn:active {
+  transform: scale(0.95);
+}
+
+.sidebar-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.sidebar-toggle-btn:hover {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .content-wrapper {
+    padding: 0 1.25rem 2.5rem 1.25rem;
+  }
+
+  .mobile-open-btn {
+    display: flex;
+  }
+}
+
 
 
 /* ================== 列印最佳化 (PDF 下載) ================== */
@@ -128,6 +214,8 @@
 
   /* 隱藏導覽與互動元件 */
   .sidebar,
+  .mobile-open-btn,
+  .sidebar-overlay,
   .section-nav-container,
   .download-btn,
   .header-nav { /* 假設有頂部導覽 */
