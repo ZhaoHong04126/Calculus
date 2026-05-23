@@ -1,0 +1,346 @@
+/* src/IntegralsApps/IntegralsApps.css */
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .apps-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+  
+  .apps-grid-equal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* 互動工具卡片容器 */
+.interactive-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+@media (min-width: 768px) {
+  .interactive-container {
+    flex-direction: row;
+  }
+}
+
+/* 左側繪圖區 */
+.canvas-wrapper {
+  flex: 1;
+  min-width: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.03);
+}
+
+/* 右側控制面板 */
+.controls-wrapper {
+  flex: 1;
+  min-width: 0; /* 防止內部寬數學算式把右側欄位撐大而擠壓左側 */
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: flex-start;
+}
+
+/* 控制組件及滑動條 */
+.control-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.control-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.slider-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.slider-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.slider-label .value {
+  font-family: monospace;
+  font-weight: bold;
+  color: #3b82f6;
+  background: #eff6ff;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.slider-input {
+  width: 100%;
+  height: 6px;
+  background: #cbd5e1;
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.slider-input::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #2563eb;
+}
+
+/* 狀態切換按鈕群組 */
+.switch-group {
+  display: flex;
+  gap: 0.5rem;
+  border-radius: 8px;
+  background: #f1f5f9;
+  padding: 0.25rem;
+}
+
+.switch-btn {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent;
+  color: #64748b;
+  text-align: center;
+}
+
+.switch-btn.active {
+  background: #ffffff;
+  color: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* 數值面板 */
+.values-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.value-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-left: 4px solid #3b82f6;
+  min-width: 0; /* 防止子元素寬度（如寬 KaTeX 算式）把盒子撐寬 */
+}
+
+.value-box.green {
+  border-left-color: #10b981;
+}
+
+.value-box.amber {
+  border-left-color: #f59e0b;
+}
+
+.value-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.value-content {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1e293b;
+  font-family: monospace;
+}
+
+/* 經典錯誤與警告框 */
+.error-box {
+  background-color: #fff1f2;
+  border: 1px solid #ffe4e6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-left: 4px solid #f43f5e;
+}
+
+.error-title {
+  color: #9f1239;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.error-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.error-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.error-marker {
+  color: #f43f5e;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.error-text h5 {
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.error-text p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* 學習總結框 */
+.summary-box {
+  background-color: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border-left: 4px solid #22c55e;
+}
+
+.summary-title {
+  color: #166534;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.summary-text {
+  font-size: 0.95rem;
+  color: #1e3a1e;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* SVG 立體旋轉體特效 CSS */
+.rotate-solid-path {
+  fill: rgba(59, 130, 246, 0.15);
+  stroke: #2563eb;
+  stroke-width: 1.5;
+  transition: d 0.1s ease;
+}
+
+.slice-disc-path {
+  fill: rgba(245, 158, 11, 0.4);
+  stroke: #d97706;
+  stroke-width: 1.5;
+}
+
+.slice-shell-path {
+  fill: rgba(16, 185, 129, 0.4);
+  stroke: #059669;
+  stroke-width: 1.5;
+}
+
+/* 弧長逼近折線的特效 */
+.chord-line {
+  stroke-dasharray: none;
+  transition: all 0.2s ease;
+}
+
+.table-compact {
+  width: 100%;
+  font-size: 0.85rem;
+  border-collapse: collapse;
+}
+
+.table-compact th, .table-compact td {
+  border: 1px solid #e2e8f0;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+.table-compact th {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* 實用工具類別，防止 Flexbox 中的 SVG 無法縮放或過度拉伸 */
+.w-full {
+  width: 100% !important;
+}
+
+.h-auto {
+  height: auto !important;
+}
+

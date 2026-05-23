@@ -13,6 +13,7 @@ import Integrals from './Integrals/Integrals';
 import Techniques from './Techniques/Techniques';
 import IntegralsApps from './IntegralsApps/IntegralsApps';
 import Reference from './Reference/Reference';
+import ImproperIntegrals from './ImproperIntegrals/ImproperIntegrals';
 import ScrollToHashElement from './components/ScrollToHash';
 
 function SidebarIcon() {
@@ -147,6 +148,11 @@ export default function App() {
               第九章：公式表 / 題庫
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/improper-integrals" onClick={closeSidebarOnMobile} className={({ isActive }) => isActive ? "active-link" : ""}>
+              第十章：瑕積分
+            </NavLink>
+          </li>
         </ul>
       </nav>
 
@@ -165,6 +171,7 @@ export default function App() {
             <Route path="/techniques" element={<Techniques />} />
             <Route path="/integrals-apps" element={<IntegralsApps />} />
             <Route path="/reference" element={<Reference />} />
+            <Route path="/improper-integrals" element={<ImproperIntegrals />} />
           </Routes>
         </div>
       </main>
