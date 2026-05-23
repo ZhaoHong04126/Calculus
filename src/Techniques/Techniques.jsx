@@ -2,15 +2,16 @@
 import USubstitution from '../Integrals/USubstitution';
 import IntegrationByParts from '../Integrals/IntegrationByParts';
 import TrigIntegrals from '../Integrals/TrigIntegrals';
+import TrigSubstitution from '../Integrals/TrigSubstitution';
 import SectionNav from '../components/SectionNav';
 import '../Integrals/Integrals.css';
 
 export default function Techniques() {
   const sections = [
-    { id: 'substitution', title: '變數變換法 (u-Substitution)' },
-    { id: 'parts', title: '分部積分法 (Integration by Parts)' },
-    { id: 'trig-integrals', title: '三角函數的積分 (Trigonometric Integrals)' },
-    { id: 'trig-sub', title: '三角變換法 (Coming Soon)' },
+    { id: 'substitution', title: '變數變換法)' },
+    { id: 'parts', title: '分部積分法' },
+    { id: 'trig-integrals', title: '三角函數的積分' },
+    { id: 'trig-sub', title: '三角變換法' },
   ];
 
   return (
@@ -36,10 +37,8 @@ export default function Techniques() {
         <TrigIntegrals />
       </div>
 
-      <div id="trig-sub" className="mt-8 pt-4 ml-6 border-t border-gray-50">
-        <h3 className="section-subtitle text-xl font-bold mb-4 opacity-50">
-          4. 三角變換法 (Coming Soon)
-        </h3>
+      <div id="trig-sub">
+        <TrigSubstitution />
       </div>
     </div>
   );
