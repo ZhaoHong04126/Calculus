@@ -308,20 +308,18 @@ export default function ArcLength() {
                 <p>
                   我們有 <InlineMath math="f(x) = \frac{1}{6}x^3 + \frac{1}{2}x^{-1}" />。<br />
                   對其求導數：
-                  <BlockMath math="f'(x) = \frac{3}{6}x^2 - \frac{1}{2}x^{-2} = \frac{x^2}{2} - \frac{1}{2x^2}" />
                 </p>
+                <BlockMath math="f'(x) = \frac{3}{6}x^2 - \frac{1}{2}x^{-2} = \frac{x^2}{2} - \frac{1}{2x^2}" />
 
                 <p><strong>Step 2：計算根號內部 <InlineMath math="1 + [f'(x)]^2" /> 並化簡</strong></p>
-                <p>
-                  展開導函數的平方：
-                  <BlockMath math="[f'(x)]^2 = \left( \frac{x^2}{2} - \frac{1}{2x^2} \right)^2 = \frac{x^4}{4} - 2\left(\frac{x^2}{2}\right)\left(\frac{1}{2x^2}\right) + \frac{1}{4x^4} = \frac{x^4}{4} - \frac{1}{2} + \frac{1}{4x^4}" />
-                  將常數 1 加回：
-                  <BlockMath math="1 + [f'(x)]^2 = 1 + \left( \frac{x^4}{4} - \frac{1}{2} + \frac{1}{4x^4} \right) = \frac{x^4}{4} + \frac{1}{2} + \frac{1}{4x^4}" />
-                  注意到這是一個完全平方式：
-                  <BlockMath math="= \left( \frac{x^2}{2} + \frac{1}{2x^2} \right)^2" />
-                  取根號時，因為 <InlineMath math="x \in [1, 3]" /> 內該式恆正，可直接去根號：
-                  <BlockMath math="\sqrt{1 + [f'(x)]^2} = \frac{x^2}{2} + \frac{1}{2x^2}" />
-                </p>
+                <p>展開導函數的平方：</p>
+                <BlockMath math="[f'(x)]^2 = \left( \frac{x^2}{2} - \frac{1}{2x^2} \right)^2 = \frac{x^4}{4} - 2\left(\frac{x^2}{2}\right)\left(\frac{1}{2x^2}\right) + \frac{1}{4x^4} = \frac{x^4}{4} - \frac{1}{2} + \frac{1}{4x^4}" />
+                <p>將常數 1 加回：</p>
+                <BlockMath math="1 + [f'(x)]^2 = 1 + \left( \frac{x^4}{4} - \frac{1}{2} + \frac{1}{4x^4} \right) = \frac{x^4}{4} + \frac{1}{2} + \frac{1}{4x^4}" />
+                <p>注意到這是一個完全平方式：</p>
+                <BlockMath math="= \left( \frac{x^2}{2} + \frac{1}{2x^2} \right)^2" />
+                <p>取根號時，因為 <InlineMath math="x \in [1, 3]" /> 內該式恆正，可直接去根號：</p>
+                <BlockMath math="\sqrt{1 + [f'(x)]^2} = \frac{x^2}{2} + \frac{1}{2x^2}" />
 
                 <p><strong>Step 3：列定積分並求值</strong></p>
                 <BlockMath math="L = \int_{1}^{3} \left( \frac{x^2}{2} + \frac{1}{2x^2} \right) \, dx = \left[ \frac{x^3}{6} - \frac{1}{2x} \right]_{1}^{3}" />
@@ -345,10 +343,8 @@ export default function ArcLength() {
                   我們可以將球體視為由上半圓 <InlineMath math="y = \sqrt{r^2 - x^2}" />（在區間 <InlineMath math="[-r, r]" /> 上）繞 <InlineMath math="x" /> 軸旋轉所得的三維旋轉面。
                 </p>
                 <p><strong>Step 1：對圓方程式求導</strong></p>
-                <p>
-                  對 <InlineMath math="y = (r^2 - x^2)^{1/2}" /> 求導：
-                  <BlockMath math="y' = \frac{1}{2}(r^2 - x^2)^{-1/2} \cdot (-2x) = \frac{-x}{\sqrt{r^2 - x^2}}" />
-                </p>
+                <p>對 <InlineMath math="y = (r^2 - x^2)^{1/2}" /> 求導：</p>
+                <BlockMath math="y' = \frac{1}{2}(r^2 - x^2)^{-1/2} \cdot (-2x) = \frac{-x}{\sqrt{r^2 - x^2}}" />
 
                 <p><strong>Step 2：計算弧長微元 ds</strong></p>
                 <BlockMath math="1 + [y']^2 = 1 + \frac{x^2}{r^2 - x^2} = \frac{(r^2 - x^2) + x^2}{r^2 - x^2} = \frac{r^2}{r^2 - x^2}" />

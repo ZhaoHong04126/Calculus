@@ -467,11 +467,11 @@ export default function AreaBetweenCurves() {
                   <strong>解題步驟：</strong>
                 </p>
                 <p><strong>Step 1：尋找兩曲線的交點（決定積分界限）</strong></p>
+                <p>令兩曲線方程式相等：</p>
+                <BlockMath math="2 - x^2 = -x" />
+                <p>移項整理得二次方程式：</p>
+                <BlockMath math="x^2 - x - 2 = 0 \implies (x-2)(x+1) = 0" />
                 <p>
-                  令兩曲線方程式相等：
-                  <BlockMath math="2 - x^2 = -x" />
-                  移項整理得二次方程式：
-                  <BlockMath math="x^2 - x - 2 = 0 \implies (x-2)(x+1) = 0" />
                   解得交點的 <InlineMath math="x" /> 座標為 <InlineMath math="x = -1" /> 與 <InlineMath math="x = 2" />。因此，定積分的上下界為 <InlineMath math="a = -1, b = 2" />。
                 </p>
                 
@@ -513,9 +513,9 @@ export default function AreaBetweenCurves() {
                 </p>
                 <hr className="my-2 border-blue-100" />
                 <p><strong>Step 1：尋找兩曲線的交點（決定 y 積分界限）</strong></p>
+                <p>令兩式的 <InlineMath math="x" /> 相等：</p>
+                <BlockMath math="3 - y^2 = y + 1 \implies y^2 + y - 2 = 0 \implies (y+2)(y-1) = 0" />
                 <p>
-                  令兩式的 <InlineMath math="x" /> 相等：
-                  <BlockMath math="3 - y^2 = y + 1 \implies y^2 + y - 2 = 0 \implies (y+2)(y-1) = 0" />
                   解得交點的 <InlineMath math="y" /> 座標為 <InlineMath math="y = -2" /> 與 <InlineMath math="y = 1" />。定積分上下界即為 <InlineMath math="c = -2, d = 1" />。
                 </p>
 

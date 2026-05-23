@@ -151,8 +151,8 @@ export default function VolumeSolids() {
                 <p>
                   因為是繞 <InlineMath math="x" /> 軸旋轉，我們對 <InlineMath math="x" /> 軸作垂直切片。
                   在任意點 <InlineMath math="x" /> 處，切片的截面是一個實心圓盤，其半徑為曲線的高度，即：
-                  <BlockMath math="R(x) = x^2" />
                 </p>
+                <BlockMath math="R(x) = x^2" />
 
                 <p><strong>Step 2：確定積分區間</strong></p>
                 <p>
@@ -193,11 +193,9 @@ export default function VolumeSolids() {
                 </p>
 
                 <p><strong>Step 2：確定積分區間</strong></p>
-                <p>
-                  尋找拋物線與 <InlineMath math="x" /> 軸的交點：
-                  <BlockMath math="2x - x^2 = 0 \implies x(2 - x) = 0 \implies x = 0, x = 2" />
-                  因此，積分區間為 <InlineMath math="[0, 2]" />。
-                </p>
+                <p>尋找拋物線與 <InlineMath math="x" /> 軸的交點：</p>
+                <BlockMath math="2x - x^2 = 0 \implies x(2 - x) = 0 \implies x = 0, x = 2" />
+                <p>因此，積分區間為 <InlineMath math="[0, 2]" />。</p>
 
                 <p><strong>Step 3：建立定積分並計算</strong></p>
                 <p>根據圓柱殼法公式：</p>
