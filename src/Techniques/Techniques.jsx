@@ -8,7 +8,7 @@ import '../Integrals/Integrals.css';
 
 export default function Techniques() {
   const sections = [
-    { id: 'substitution', title: '變數變換法)' },
+    { id: 'substitution', title: '變數變換法' },
     { id: 'parts', title: '分部積分法' },
     { id: 'trig-integrals', title: '三角函數的積分' },
     { id: 'trig-sub', title: '三角變換法' },

@@ -586,17 +586,17 @@ export default function TrigSubstitution() {
                 <BlockMath math="\int \frac{dx}{x^2\sqrt{x^2+4}} = \int \frac{2\sec^2\theta \, d\theta}{(2\tan\theta)^2 \cdot (2\sec\theta)} = \int \frac{2\sec^2\theta}{8\tan^2\theta\sec\theta} \, d\theta" />
                 <BlockMath math="= \frac{1}{4} \int \frac{\sec\theta}{\tan^2\theta} \, d\theta" />
                 <p>將三角函數轉化為正弦與餘弦：</p>
-                <BlockMath math="\frac{\sec\theta}{\tan^2\theta} = \frac{1}{\cos\theta} \\cdot \\frac{\cos^2\theta}{\sin^2\theta} = \frac{\cos\theta}{\sin^2\theta}" />
+                <BlockMath math="\frac{\sec\theta}{\tan^2\theta} = \frac{1}{\cos\theta} \cdot \frac{\cos^2\theta}{\sin^2\theta} = \frac{\cos\theta}{\sin^2\theta}" />
                 <p>因此積分變為：</p>
                 <BlockMath math="= \frac{1}{4} \int \frac{\cos\theta}{\sin^2\theta} \, d\theta = \frac{1}{4} \int (\sin\theta)^{-2} d(\sin\theta)" />
-                <BlockMath math="= \frac{1}{4} \left( -\\frac{1}{\sin\theta} \right) + C = -\\frac{1}{4} \\csc\\theta + C" />
+                <BlockMath math="= \frac{1}{4} \left( -\frac{1}{\sin\theta} \right) + C = -\frac{1}{4} \csc\theta + C" />
 
                 <p><strong>Step 4：利用直角三角形回代</strong></p>
                 <p>
                   由設定 <InlineMath math="\tan\theta = \frac{x}{2}" /> 可畫出直角三角形，其中對邊為 <InlineMath math="x" />，鄰邊為 <InlineMath math="2" />，斜邊為 <InlineMath math="\sqrt{x^2+4}" />。<br />
                   我們需要餘割值 <InlineMath math="\csc\theta" />：
                 </p>
-                <BlockMath math="\csc\theta = \frac{\text{斜邊}}{\\text{對邊}} = \frac{\sqrt{x^2+4}}{x}" />
+                <BlockMath math="\csc\theta = \frac{\text{斜邊}}{\text{對邊}} = \frac{\sqrt{x^2+4}}{x}" />
                 <p>將此代回原積分結果，得到最終解：</p>
                 <BlockMath math="= -\frac{\sqrt{x^2+4}}{4x} + C" />
               </div>
