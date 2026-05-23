@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 // src/Derivatives/DifferentiationRules.jsx
 import React from 'react';
 import { InlineMath, BlockMath } from '../components/Math';

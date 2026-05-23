@@ -3,7 +3,6 @@ import { InlineMath, BlockMath } from '../components/Math';
 import DiscontinuityVisualizer from './DiscontinuityVisualizer';
 import './Continuity.css';
 
-/* eslint-disable react/prop-types */
 const ProofBox = ({ title = "查看證明", children }) => {
   return (
     <details className="proof-box">

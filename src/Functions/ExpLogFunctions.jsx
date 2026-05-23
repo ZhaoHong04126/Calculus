@@ -157,8 +157,8 @@ export default function ExpLogFunctions() {
             <BlockMath math="\ln x = \log_e x" />
             <p className="text-sm mt-3 text-gray-800 font-bold">重要的對消性質 (Cancellation Equations)：</p>
             <ul className="list-disc list-inside mt-1 text-sm text-gray-700 bg-gray-50 p-2 rounded">
-              <li><InlineMath math="\ln(e^x) = x" />　(對所有 <InlineMath math="x" />)</li>
-              <li><InlineMath math="e^{\ln x} = x" />　(當 <InlineMath math="x > 0" />)</li>
+              <li><InlineMath math="\ln(e^x) = x" /> (對所有 <InlineMath math="x" />)</li>
+              <li><InlineMath math="e^{\ln x} = x" /> (當 <InlineMath math="x > 0" />)</li>
             </ul>
           </div>
         </div>
