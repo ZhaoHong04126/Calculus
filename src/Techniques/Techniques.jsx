@@ -3,6 +3,7 @@ import USubstitution from '../Integrals/USubstitution';
 import IntegrationByParts from '../Integrals/IntegrationByParts';
 import TrigIntegrals from '../Integrals/TrigIntegrals';
 import TrigSubstitution from '../Integrals/TrigSubstitution';
+import PartialFractions from '../Integrals/PartialFractions';
 import SectionNav from '../components/SectionNav';
 import '../Integrals/Integrals.css';
 
@@ -12,6 +13,7 @@ export default function Techniques() {
     { id: 'parts', title: '分部積分法' },
     { id: 'trig-integrals', title: '三角函數的積分' },
     { id: 'trig-sub', title: '三角變換法' },
+    { id: 'partial-fraction', title: '部分分式' }
   ];
 
   return (
@@ -39,6 +41,10 @@ export default function Techniques() {
 
       <div id="trig-sub">
         <TrigSubstitution />
+      </div>
+
+      <div id="partial-fraction">
+        <PartialFractions />
       </div>
     </div>
   );

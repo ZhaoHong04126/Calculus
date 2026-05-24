@@ -54,13 +54,16 @@
 *   微積分基本定理 (FTC)。
 
 ### **第七章：積分技巧 (Integration Techniques)**
-*   變數變換法 (u-Substitution) 與分部積分法 (IBP)。
+*   變數變換法 (u-Substitution)、分部積分法 (IBP)、三角函數的積分、三角代換法與部分分式積分法 (Partial Fractions)。
 
 ### **第八章：積分的應用 (Applications of Integrals)**
 *   面積、體積與物理應用（持續更新中）。
 
 ### **第九章：公式表 / 題庫 (Reference)**
 *   全課程重要定理彙整、運算法則與精選題庫。
+
+### **第十章：瑕積分 (Improper Integrals)**
+*   極限應用於無窮區間與無界函數之積分運算（規劃中）。
 
 
 ---
@@ -69,7 +72,7 @@
 
 | 類別 | 使用技術 |
 | :--- | :--- |
-| **核心框架** | `React 18` |
+| **核心框架** | `React 19` |
 | **建置工具** | `Vite` (極速啟動與 HMR) |
 | **路由系統** | `React Router DOM v6` |
 | **數學引擎** | `KaTeX` (原生自訂渲染封裝) |
@@ -101,30 +104,31 @@
 
 ```text
 visual-calculus/
-├── public/             # 靜態資源 (圖示、Service Worker)
-│   └── sw.js           # PWA 離線緩存配置
-├── src/                # 原始碼主目錄
-│   ├── About/          # 首頁：目錄總覽與網站簡介
-│   ├── Introduction/   # 第零章：簡介與學習地圖
-│   ├── Functions/      # 第一章：各類基礎函數
-│   ├── Limits/         # 第二章：極限理論
-│   ├── Continuity/     # 第三章：連續性
-│   ├── Derivatives/    # 第四章：導數與微分
-│   ├── DerivativesApps/# 第五章：微分的應用
-│   ├── Integrals/      # 第六章：反導數與積分
-│   ├── Techniques/     # 第七章：積分技巧
-│   ├── IntegralsApps/  # 第八章：積分的應用
-│   ├── Reference/      # 第九章：公式表與題庫
-│   ├── components/     # 全域組件 (ScrollToHash, SectionNav 等)
-│   ├── App.jsx         # 路由配置與全站主框架佈局
-│   ├── App.css         # 全站核心樣式與動畫定義
-│   ├── index.css       # 基礎排版與原子化 CSS
-│   └── main.jsx        # 程式進入點與 HashRouter 配置
-├── index.html          # SPA 進入頁面
-├── package.json        # 專案依賴與版本資訊
-└── vite.config.js      # Vite 建置配置
+├── public/                 # 靜態資源 (圖示、Service Worker)
+│   └── sw.js               # PWA 離線緩存配置
+├── src/                    # 原始碼主目錄
+│   ├── About/              # 首頁：目錄總覽與網站簡介
+│   ├── Introduction/       # 第零章：簡介與學習地圖
+│   ├── Functions/          # 第一章：各類基礎函數
+│   ├── Limits/             # 第二章：極限理論
+│   ├── Continuity/         # 第三章：連續性
+│   ├── Derivatives/        # 第四章：導數與微分
+│   ├── DerivativesApps/    # 第五章：微分的應用
+│   ├── Integrals/          # 第六章：反導數與積分
+│   ├── Techniques/         # 第七章：積分技巧
+│   ├── IntegralsApps/      # 第八章：積分的應用
+│   ├── Reference/          # 第九章：公式表與題庫
+│   ├── ImproperIntegrals/  # 第十章：瑕積分
+│   ├── components/         # 全域組件 (ScrollToHash, SectionNav 等)
+│   ├── App.jsx             # 路由配置與全站主框架佈局
+│   ├── App.css             # 全站核心樣式與動畫定義
+│   ├── index.css           # 基礎排版與原子化 CSS
+│   └── main.jsx            # 程式進入點與 HashRouter 配置
+├── index.html              # SPA 進入頁面
+├── package.json            # 專案依賴與版本資訊
+└── vite.config.js          # Vite 建置配置
 ```
 
 ---
 
-**Made with ❤️ for Calculus Learners.**
+**Made with ❤️ for Calculus Learners.**

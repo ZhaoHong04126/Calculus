@@ -2,7 +2,7 @@
   "name": "calculus-resources",
   "homepage": "https://zhaohong04126.github.io/Calculus",
   "private": true,
-  "version": "7.7.0",
+  "version": "7.9.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
