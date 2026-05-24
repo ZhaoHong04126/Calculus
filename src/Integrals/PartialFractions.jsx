@@ -249,7 +249,6 @@ export default function PartialFractions() {
 
     // B1 term: B1 ln|x - b|
     const valB1 = numB1 / denB1;
-    const signB1 = valB1 < 0 ? '-' : '';
     const absB1_tex = formatFraction(Math.abs(numB1), denB1);
     const termB1_tex = absB1_tex === '1' 
       ? `\\ln|${formatAbsItem(b)}|` 
