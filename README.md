@@ -4,7 +4,7 @@
 
 這是一個專為大學微積分初學者打造的「互動式線上參考手冊」。我們揚棄了傳統講義的靜態限制，結合了嚴謹的數學邏輯（如 $\epsilon-\delta$ 證明）與動態幾何視覺化，幫助你直觀地建立對微積分核心概念的深度理解。
 
-🌐 **[點此進入互動學習空間](https://visual-calculus.vercel.app/)**
+🌐 **[點此進入互動學習空間](https://zhaohong04126.github.io/Calculus/)**
 
 ---
 
@@ -127,4 +127,4 @@ visual-calculus/
 
 ---
 
-**Made with ❤️ for Calculus Learners.**
+**Made with ❤️ for Calculus Learners.**
